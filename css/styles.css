@@ -1,4 +1,4 @@
-﻿/* ===========================
+/* ===========================
    styles.css — единый итоговый файл
    - убраны дубли и "..."
    - единообразные переменные
@@ -672,8 +672,10 @@ main > section {
     color: #fff;
     padding: 36px 0;
     font-size: 15px;
+    flex-shrink: 0; /* чтобы футер не сжимался */
 }
 
+    /* Контейнер внутри футера */
     .footer-container,
     .site-footer .container,
     .footer .container {
@@ -689,7 +691,7 @@ main > section {
     .footer h3,
     .site-footer h3 {
         color: #fff;
-        margin-bottom: 12px
+        margin-bottom: 12px;
     }
 
     .footer-links, .footer-contact, .footer-social,
@@ -709,7 +711,7 @@ main > section {
         .footer a:hover,
         .site-footer a:hover {
             color: #ff6b6b;
-            opacity: 1
+            opacity: 1;
         }
 
 /* Подвал — нижняя полоса */
@@ -721,6 +723,46 @@ main > section {
     font-size: 14px;
     margin-top: 14px;
 }
+
+/* === Sticky footer fix === */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main, .main, .site-main, .content {
+    flex: 1 0 auto;
+}
+
+/* Если есть .wrapper вокруг контента */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+    .wrapper > main {
+        flex: 1 0 auto;
+    }
+
+        /* Отступ последнего блока от футера */
+        main > .section:last-child,
+        main > section:last-child,
+        .wrapper > main > .section:last-child {
+            margin-bottom: 32px;
+        }
+
+@media (max-width: 768px) {
+    main > .section:last-child {
+        margin-bottom: 20px;
+    }
+}
+
 
 /* ====== Универсальные мелкие вещи ====== */
 .section-title {
@@ -765,6 +807,80 @@ img {
 
     .thanks-card img {
         max-height: 360px
+    }
+}
+
+
+/* Сетка для страницы "Работы" */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.work-item {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .work-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .work-item img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+.work-content {
+    padding: 20px;
+}
+
+    .work-content h2 {
+        font-size: 1.4rem;
+        color: var(--color-primary);
+        margin-bottom: 10px;
+    }
+
+    .work-content p {
+        color: var(--color-secondary);
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+.work-materials {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .work-materials li {
+        font-size: 0.95rem;
+        color: var(--color-dark);
+        margin-bottom: 6px;
+        padding-left: 1.2em;
+        position: relative;
+    }
+
+        .work-materials li::before {
+            content: "✔";
+            color: var(--color-accent);
+            position: absolute;
+            left: 0;
+        }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .works-grid {
+        grid-template-columns: 1fr;
     }
 }
 
