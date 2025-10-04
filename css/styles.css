@@ -884,6 +884,132 @@ img {
     }
 }
 
+/* Общие отступы для всех секций сайта */
+.section {
+    padding: 60px 0; /* сверху и снизу */
+}
+
+/* Чтобы заголовки и текст не прилипали к header */
+main {
+    padding-top: 40px; /* отступ сверху от шапки */
+}
+
+    /* Чтобы контент не прилипал к футеру */
+    main > .section:last-child {
+        margin-bottom: 40px; /* отступ снизу от последнего блока */
+    }
+
+
+.contacts-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.contacts-info {
+    flex: 1 1 300px;
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+    line-height: 1.6;
+}
+
+.contacts-map {
+    flex: 1 1 500px;
+    min-height: 350px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+    .contacts-map iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+    }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .contacts-wrapper {
+        flex-direction: column;
+    }
+}
+
+
+/* Общий фон */
+.product-page {
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+}
+
+/* Затемнённая только область текста */
+.product-detail {
+    background: rgba(17, 37, 51, 0.75); /* полупрозрачный фон только под текстом */
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+    /* Заголовки и текст */
+    .product-detail h1,
+    .product-detail h2,
+    .product-detail p,
+    .product-detail li {
+        color: #fff;
+    }
+
+.product-usage-block {
+    margin-top: 40px;
+}
+
+    .product-usage-block h2 {
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        border-bottom: 2px solid #ff6b6b;
+        padding-bottom: 10px;
+    }
+.product-page {
+    background-image: url('images/products/promyshlennye_poly.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+    padding: 60px 0;
+}
+
+.product-detail {
+    background: rgba(0, 0, 0, 0.65); /* затемнение только под текстом */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+    .product-detail h1,
+    .product-detail h2 {
+        margin-bottom: 20px;
+    }
+
+    .product-detail p {
+        margin-bottom: 15px;
+    }
+
+    .product-detail ol,
+    .product-detail dl {
+        margin: 15px 0 20px 25px;
+    }
+
+    .product-detail a.btn-secondary {
+        display: inline-block;
+        margin-top: 30px; /* отступ от текста */
+    }
+
 /* Если на каких-то страницах подвал не показывается — проверьте HTML: 
    убедитесь что внизу каждой страницы присутствует корректный блок
    <footer class="footer">...</footer> или <footer class="site-footer">...</footer>.
