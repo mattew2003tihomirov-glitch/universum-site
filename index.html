@@ -73,14 +73,6 @@
                 <div class="services-grid">
                     <div class="service-item">
                         <img src="images/services/service1.jpg" alt="Услуга 1" />
-                        <h3>Дробеструйная обработка бетона</h3>
-                        <p>
-                            Профессиональная подготовка бетонных полов: дробеструйная обработка, фрезеровка и шлифовка для идеально ровного и прочного основания.
-                        </p>
-                        <a href="service1.html" class="btn-secondary">Подробнее</a>
-                    </div>
-                    <div class="service-item">
-                        <img src="images/services/service2.jpeg" alt="Услуга 2" />
                         <h3>Устройство промышленных перекрытий</h3>
                         <p>Надёжные промышленные полы под любые нагрузки с гарантией долговечности.</p>
                         <a href="service2.html" class="btn-secondary">Подробнее</a>
@@ -99,19 +91,19 @@
                         <p>
                             Профессиональный ремонт и восстановление бетонных полов и конструкций с гарантией прочности.
                         </p>
-                        <a href="service3.html" class="btn-secondary">Подробнее</a>
+                        <a href="service4.html" class="btn-secondary">Подробнее</a>
                     </div>
                     <div class="service-item">
                         <img src="images/services/service5.jpg" alt="Услуга 3" />
                         <h3>Технические проектные решения</h3>
                         <p>Проектные решения любой сложности — точные расчёты и полная подготовка проектной документации «под ключ».</p>
-                        <a href="service3.html" class="btn-secondary">Подробнее</a>
+                        <a href="service5.html" class="btn-secondary">Подробнее</a>
                     </div>
                     <div class="service-item">
                         <img src="images/services/service6.jpg" alt="Услуга 3" />
                         <h3>Огнезащита</h3>
                         <p>Комплексная пассивная огнезащита конструкций и инженерных систем с проектными решениями любой сложности.</p>
-                        <a href="service3.html" class="btn-secondary">Подробнее</a>
+                        <a href="service6.html" class="btn-secondary">Подробнее</a>
                     </div>
                     <div class="product-item centered" ">
                         <img src="images/services/service7.jpg" alt="Услуга 3" />
@@ -119,7 +111,7 @@
                         <p>
                             Инженерное сопровождение и технический надзор строительства для гарантии качества и экономии.
                         </p>
-                        <a href="service3.html" class="btn-secondary">Подробнее</a>
+                        <a href="service7.html" class="btn-secondary">Подробнее</a>
                     </div>
                 </div>
             </div>
@@ -288,13 +280,19 @@
         <section class="contact section" id="form">
             <div class="container">
                 <h2>Оставить заявку</h2>
-                <form class="feedback-form">
+                <form id="contactForm" class="feedback-form">
                     <div class="form-grid">
                         <input type="text" name="name" placeholder="Ваше имя" required />
-                        <input type="tel" name="phone" placeholder="Телефон" required />
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               placeholder="+7 (___) ___ - __ - __"
+                               maxlength="40"
+                               required />
                     </div>
-                    <textarea name="message" placeholder="Ваше сообщение"></textarea>
+                    <textarea name="message" placeholder="Ваше сообщение" ></textarea>
                     <button type="submit" class="btn-primary">Отправить</button>
+                    <p id="formStatus"></p>
                 </form>
             </div>
         </section>

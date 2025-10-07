@@ -32,8 +32,9 @@
     <main class="section">
         <div class="container">
             <h1>Контактная информация</h1>
-            <div class="contacts-wrapper">
 
+            <div class="contacts-wrapper">
+                <!-- Левая часть: текст -->
                 <section class="contacts-info">
                     <p><strong>Адрес:</strong> г. Пермь, ул. Деревообделочная, д. 8, офис 319</p>
                     <p><strong>Телефон:</strong> +7 (342) 258-25-89</p>
@@ -41,22 +42,34 @@
                     <p><strong>Режим работы:</strong> Пн–Пт, 9:00–18:00</p>
                 </section>
 
-                <!-- Contact Form -->
-                <section class="contact section" id="form">
-                    <div class="container">
-                        <h2>Оставить заявку</h2>
-                        <form class="feedback-form">
-                            <div class="form-grid">
-                                <input type="text" name="name" placeholder="Ваше имя" required />
-                                <input type="tel" name="phone" placeholder="Телефон" required />
-                            </div>
-                            <textarea name="message" placeholder="Ваше сообщение"></textarea>
-                            <button type="submit" class="btn-primary">Отправить</button>
-                        </form>
-                    </div>
+                <!-- Правая часть: карта -->
+                <section class="contacts-map">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A18311150406d1e9237bea61382deedf14f8f7b27a187a27caa463e69c80a4c7b&amp;source=constructor" width="594" height="400" frameborder="0"></iframe>
                 </section>
-
             </div>
+
+            <!-- Форма — ниже -->
+            <section class="contact section" id="form">
+                <div class="container">
+                    <h2>Оставить заявку</h2>
+                    <form class="feedback-form" id="contactForm">
+                        <div class="form-grid">
+                            <input type="text" name="name" placeholder="Ваше имя" required />
+                            <<input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                placeholder="+7 (___) ___ - __ - __" 
+                                maxlength="18" 
+                                required 
+                            />
+                        </div>
+                        <textarea name="message" placeholder="Ваше сообщение" required></textarea>
+                        <button type="submit" class="btn-primary">Отправить</button>
+                    </form>
+                    <p id="formStatus"></p>
+                </div>
+            </section>
         </div>
     </main>
 
