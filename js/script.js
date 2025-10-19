@@ -62,6 +62,26 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+// Lightbox для благодарностей
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.querySelector(".lightbox-img");
+const closeBtn = document.querySelector(".lightbox .close");
 
+document.querySelectorAll(".thanks-card img").forEach(img => {
+    img.addEventListener("click", () => {
+        lightbox.style.display = "block";
+        lightboxImg.src = img.src;
+    });
+});
+
+closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = "none";
+    }
+});
 
 

@@ -81,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const token = "ВАШ_TELEGRAM_BOT_TOKEN"; // вставь токен
-        const chatId = "ВАШ_CHAT_ID"; // вставь chat_id
+        const token = "7712833268:AAGjUD1MA5rNr1QNBk6CYEaZhyLLbiDDbL0"; // вставь токен
+        const chatId = "3144476595"; // вставь chat_id
 
         const name = form.name.value.trim();
         const phone = phoneInput.value.trim();
